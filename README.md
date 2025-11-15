@@ -1,98 +1,127 @@
-[use]: https://github.com/Andre601/mkdocs-template/generate
+<p align="center">
+  <img src="docs/assets/images/media-logo-anim.svg" alt="Medialabbet logotyp" height="140">
+</p>
 
-[MkDocs]: https://www.mkdocs.org/
+# Medialabbet – Introduktionskurs i generativ AI
 
-[squidfunk]: https://github.com/squidfunk
-[MkDocs Material Theme]: https://github.com/squidfunk/mkdocs-material
+Det här repot innehåller kursmaterialet för Medialabbets introduktionskurs i generativ AI och stora språkmodeller (LLM).
 
-[facelessuser]: https://github.com/facelessuser
-[PyMdown Extensions]: https://github.com/facelessuser/pymdown-extensions/
+Kursen bygger på:
+- öppna källor och aktuella exempel om generativ AI
+- praktiska erfarenheter från Medialabbet, Friskvårdsklubben och Bottennappet i Väst
+- eget framtaget material, övningar och diskussionsfrågor
 
-[Netlify]: https://netlify.com
+Materialet publiceras både som:
+- en **webbsida** via MkDocs + GitHub Pages
+- **PDF**:er som kan delas och skrivas ut till deltagare
 
-[mkdocs.yml]: https://github.com/Andre601/mkdocs-template/blob/master/mkdocs.yml
-[docs folder]: https://github.com/Andre601/mkdocs-template/blob/master/docs
-[workflow]: https://github.com/Andre601/mkdocs-template/blob/master/.github/workflows/deploy.yml
+Allt innehåll skrivs i **Markdown** och genereras automatiskt.
 
-[LICENSE]: https://github.com/Andre601/mkdocs-template/blob/master/LICENSE
+---
 
-[gh-pages]: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+## Struktur
 
-# MkDocs Material Template
-This is a template repository for anyone that wants to use the MkDocs Material Theme.
+Den viktigaste strukturen i repot:
+```text
+    .
+    ├── docs/                    # Allt kursinnehåll (Markdown)
+    │   ├── index.md             # Startsida / kursöversikt
+    │   ├── kapitel-01-....md    # Kapitel 1 – Generativ AI och datans roll
+    │   ├── kapitel-02-....md    # Kapitel 2 – Stora språkmodeller (LLM)
+    │   └── assets/
+    │       └── images/
+    │           ├── media-logo.png
+    │           ├── media-logo.svg
+    │           ├── media-logo-anim.svg
+    │           └── media-logo-icon.svg
+    ├── mkdocs.yml               # MkDocs-konfiguration
+    ├── requirements.txt         # Python-dependenser (MkDocs, tema m.m.)
+    └── .github/workflows/       # GitHub Actions för build/deploy
+```
+Lägg till fler kapitel, övningar och bilagor genom att skapa nya `.md`-filer i `docs/` och uppdatera navigeringen i `mkdocs.yml`.
 
-## Getting Started
-To get started, first clone this template by clicking on the Green button labeled [`Use this template`][use].  
-On the new screen, give your repository a name and make sure to check `Include all branches`. This will make sure that the `gh-pages` branch is included, or otherwhise publishing the docs to GitHub Pages could cause errors (See [Troubleshooting](#troubleshooting)).
+---
 
-> **Note**  
-> GitHub changed how you define from where it takes the pages to build. You are now able to define both a branch and a specific folder from where GitHub would take the files to then deploy them on GitHub Pages.  
-> You can read more about this [here][gh-pages].
+## Logotyper och grafik
 
-### Creating pages
-To create new pages, just add new markdown files to the [docs folder] of the repository and edit them.  
-MkDocs will then turn those into static HTML pages once you [build](#build-pages) or [deploy](#deploy-to-github) the pages.
+Loggorna ligger i `docs/assets/images/`:
 
-The template also has some pre-made settings for your convenience to help you with creating documentation much easier.  
-In the [mkdocs.yml] will you find many settings that you can alter. Please check the comments and the links they have for more info.
+- `media-logo-anim.svg` – animerad fullbreddslogga  
+- `media-logo.svg` – statisk fullbreddslogga (vektor)  
+- `media-logo.png` – statisk fullbreddslogga (raster)  
+- `media-logo-icon.svg` – stiliserad M-ikon för mindre ytor
 
-It also contains some extensions that might be useful including:
+### Användning i sidor under `docs/`
 
-- Admonition
-- CodeHilite
-- ToC
-- [PyMdown Extensions]
+Animerad logga högst upp på en sida:
+```markdown
+    ![Medialabbet logotyp](assets/images/media-logo-anim.svg)
+```
+Statisk logga:
+```markdown
+    ![Medialabbet logotyp](assets/images/media-logo.svg)
+```
+Ikon, t.ex. i en info-ruta:
+```markdown
+    ![Medialabbet ikon](assets/images/media-logo-icon.svg)
+```
+### Användning i README (den här filen)
 
-You're free to add, edit or remove any extension at your own discretion, but keep in mind that some expansions might cause compatibility issues with others or require to be downloaded first.  
-For that, alter the `requirements.txt` if you also deploy pages using GitHub Actions or [Netlify](#netlify)
+I början av filen används:
+```html
+    <p align="center">
+      <img src="docs/assets/images/media-logo-anim.svg" alt="Medialabbet logotyp" height="140">
+    </p>
+```
+Justera gärna höjd eller byt till statisk logga om du vill.
 
-## Build Pages
-To build pages (locally) can you use the `mkdocs build` command in your prefered command prompt.  
-Note that for the successful execution of this command you have to...
+---
 
-- ...be in the folder that contains the `mkdocs.yml`
-- ...have Python 3.7 installed
-- ...have MkDocs and all required dependencies such as Material for MkDocs installed.  
-Note that Material for MkDocs automatically downloads MkDocs and also certain extensions such as the [PyMdown Extensions].
+## Köra sajten lokalt
 
-MkDocs would now build the HTML in the defined configuration folder for you to use.
+För att bygga och testa kurswebben lokalt:
 
-## Deploy to GitHub
-If you want to publish the pages on GitHub Pages can you use the [premade workflow][workflow] for this.  
-This workflow will setup Python, download Material for MkDocs and all its dependencies and deploy the pages to the `gh-pages` branch to then be viewable under `<username>.github.io/<repository>` (unless you defined a specific CNAME through a CNAME file in the [docs folder]).
+1. Installera Python 3 om det inte redan finns.
+2. Installera beroenden:
+```bash
+       pip install -r requirements.txt
+```
+3. Starta utvecklingsservern:
+```bash
+       mkdocs serve
+```
+4. Öppna webbläsaren och gå till:
 
-Note that in order for this to work will you need to have a `gh-pages` branch already made.
+       http://127.0.0.1:8000
 
-## Netlify
-Netlify is an amazing service to build and deploy pages. This template comes with a `runtime.txt` which is used by Netlify to determine the Python version used (They use an old version of Python... Don't ask why).
+När du sparar en `.md`-fil i `docs/` uppdateras sidan automatiskt.
 
-For more information, please check out their website.
+---
 
-## Dependabot
-The repository contains a `dependabot.yml` file inside the `.github` folder which allows automatic updates through GitHub's Dependabot.  
-It is configured to target both Python dependencies (inside the `requirements.txt`) and GitHub Actions dependencies, to make sure bot are updated accordingly.
+## Publicering via GitHub Pages
 
-Note that it is configured by default to add the `Type: Update (Dependency)` label and also the `Target: Python (pip)` label for Python and `Target: GitHub Actions` label for GitHub Actions Dependencies.  
-Those labels don't exist by default so you have to either create them, or alter the ones in the dependabot.yml (You can also just remove the `labels` sections).
+Det här repot är baserat på `Andre601/mkdocs-template` och har en färdig GitHub Actions-workflow som:
 
-## Troubleshooting
-> **The deploy action gives me an error when deploying. What is the issue?**
+- bygger MkDocs-sajten
+- deployar den till branchen `gh-pages`
+- publicerar kursen via GitHub Pages
 
-There can be many issues but the most common ones are that you either don't have a `gh-pages` branch set or that the `requirements.txt` file is missing or its content is invalid.
+Vanligt flöde:
 
-> **Can I alter the overall style of the pages?**
+1. Pusha ändringar till `main`.
+2. Vänta tills Actions-jobbet (deploy) är klart.
+3. Hitta kurs-sajten under repo-inställningar → **Pages**.
 
-Yes. Material for MkDocs supports Theme extensions, meaning you can override specific parts of a theme by providing the particular file in a folder and defining this folder as the `custom_dir` one in the [mkdocs.yml].  
-This template ships with a `theme` folder that can be used for that and you can just uncomment the aforementioned line in the YAML file.
+---
 
+## Licens och källor
 
-## Credits
-A big thank you goes to the following people/groups:
+Kursmaterialet i det här repot är framtaget av FVK-Medialabbet och får vidareutvecklas över tid i takt med att vi lär oss mer och samlar in erfarenheter från deltagare.
 
-- [MkDocs] for providing the software, to generate documentation.
-- [squidfunk] for the [MkDocs Material Theme].
-- [facelessuser] for the [PyMdown Extensions].
+Innehållet är inspirerat av, men inte översatt från, bland annat:
 
-## License
-This template is served under the MIT license.  
-Read the [LICENSE] file for more info.
+- *Generative AI and LLMs For Dummies, Snowflake Special Edition* (John Wiley & Sons, 2024)
+- artiklar, bloggar och videor om generativ AI och LLM:er
+- praktiska erfarenheter från Medialabbet, Friskvårdsklubben och Bottennappet i Väst
+
+När vi bestämt hur materialet får återanvändas lägger vi till en tydlig licens (t.ex. en Creative Commons-licens).
