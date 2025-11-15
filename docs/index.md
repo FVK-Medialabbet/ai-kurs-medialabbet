@@ -1,4 +1,4 @@
-![Medialabbet logotyp](assets/images/media-logo-anim.svg)
+![Medialabbet logotyp](assets/images/medialabbet-logo-anim.svg)
 
 # Medialabbet – Introduktionskurs i generativ AI
 
