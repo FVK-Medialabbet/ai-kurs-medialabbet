@@ -30,10 +30,10 @@ Den viktigaste strukturen i repot:
     │   ├── kapitel-02-....md    # Kapitel 2 – Stora språkmodeller (LLM)
     │   └── assets/
     │       └── images/
-    │           ├── media-logo.png
-    │           ├── media-logo.svg
-    │           ├── media-logo-anim.svg
-    │           └── media-logo-icon.svg
+    │           ├── medialabbet-logo.png
+    │           ├── medialabbet-logo.svg
+    │           ├── medialabbet-logo-anim.svg
+    │           └── medialabbet-logo-icon.svg
     ├── mkdocs.yml               # MkDocs-konfiguration
     ├── requirements.txt         # Python-dependenser (MkDocs, tema m.m.)
     └── .github/workflows/       # GitHub Actions för build/deploy
@@ -46,31 +46,31 @@ Lägg till fler kapitel, övningar och bilagor genom att skapa nya `.md`-filer i
 
 Loggorna ligger i `docs/assets/images/`:
 
-- `media-logo-anim.svg` – animerad fullbreddslogga  
-- `media-logo.svg` – statisk fullbreddslogga (vektor)  
-- `media-logo.png` – statisk fullbreddslogga (raster)  
-- `media-logo-icon.svg` – stiliserad M-ikon för mindre ytor
+- `medialabbet-logo-anim.svg` – animerad fullbreddslogga  
+- `medialabbet-logo.svg` – statisk fullbreddslogga (vektor)  
+- `medialabbet-logo.png` – statisk fullbreddslogga (raster)  
+- `medialabbet-logo-icon.svg` – stiliserad M-ikon för mindre ytor
 
 ### Användning i sidor under `docs/`
 
 Animerad logga högst upp på en sida:
 ```markdown
-    ![Medialabbet logotyp](assets/images/media-logo-anim.svg)
+    ![Medialabbet logotyp](assets/images/medialabbet-logo-anim.svg)
 ```
 Statisk logga:
 ```markdown
-    ![Medialabbet logotyp](assets/images/media-logo.svg)
+    ![Medialabbet logotyp](assets/images/medialabbet-logo.svg)
 ```
 Ikon, t.ex. i en info-ruta:
 ```markdown
-    ![Medialabbet ikon](assets/images/media-logo-icon.svg)
+    ![Medialabbet ikon](assets/images/medialabbet-logo-icon.svg)
 ```
 ### Användning i README (den här filen)
 
 I början av filen används:
 ```html
     <p align="center">
-      <img src="docs/assets/images/media-logo-anim.svg" alt="Medialabbet logotyp" height="140">
+      <img src="docs/assets/images/medialabbet-logo-anim.svg" alt="Medialabbet logotyp" height="140">
     </p>
 ```
 Justera gärna höjd eller byt till statisk logga om du vill.
