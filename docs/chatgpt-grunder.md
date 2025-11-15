@@ -1,7 +1,8 @@
 # ChatGPT – grunder
 
-> Den här sidan är en introduktion till vad ChatGPT är, vad det kan göra och hur vi använder det på ett genomtänkt sätt i kursen.  
-> Innehållet är skrivet **november 2025** och bygger på dåvarande versioner av stora språkmodeller (LLM:er).
+*Den här sidan är en introduktion till vad ChatGPT är, vad det kan göra och hur vi använder det på ett genomtänkt sätt i kursen.*
+
+*Innehållet är skrivet **november 2025** och bygger på dåvarande versioner av stora språkmodeller (LLM:er).*
 
 ---
 
@@ -133,9 +134,5 @@ Ett bra grundläge är:
 
 För den som vill läsa mer strukturerat om ChatGPT, nivåer av användande och begränsningar finns ett fristående material:
 
-- **ChatGPT 101 – Introduktion och användningsnivåer**  
-  *(länk läggs in när PDF:en ligger på rätt plats i repot)*
-
-Exempel på länk (justera sökvägen efter hur du placerar filen):
-
+- **ChatGPT 101 – Introduktion och användningsnivåer**
 [ChatGPT 101 – PDF](assets/ChatGPT-101.pdf)
